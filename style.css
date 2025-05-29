@@ -1,0 +1,21 @@
+.content{
+    margin: auto;
+    width: 500px;
+    height: 500px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+
+}
+
+.tile{
+    width: 48px;
+    height: 48px;
+    border: 1px solid black;
+    background: gray;
+
+}
+
+.tile:hover{
+    background-color: whitesmoke;
+}
