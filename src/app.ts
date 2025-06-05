@@ -1,4 +1,7 @@
 import { Tile } from "./tile.js";
+// Kapusi Gergő Levente és Szollinger Rajmund
+
+
 
 function main() {
     const tábla = genTiles()
