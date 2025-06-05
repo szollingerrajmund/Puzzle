@@ -1,19 +1,7 @@
-class Tile {
-    position: {tile: number, row: number} = {tile: 0, row: 0};
-    number: number;
-    isMovable: boolean;
-
-    constructor(pos: number, num: number) {
-        this.position.row = Math.floor(pos/10);
-        this.position.tile = pos%10;
-        this.number = num
-        this.isMovable = false
-    }
-}
+import { Tile } from "./tile.js";
 
 function main() {
     const tábla = genTiles()
-    console.log(tábla)
     refreshPage(tábla)
 }
 
@@ -41,7 +29,16 @@ function genTiles() {
 
 function refreshPage(tábla: Tile[]) {
     for (let tile of tábla){
-        document.getElementsByClassName(`row-${tile.position.row} tile-${tile.position.tile}`)[0].innerHTML = `${tile.number}`;
+        tile.element = document.getElementsByClassName(`row-${tile.position.row} tile-${tile.position.tile}`)[0] as HTMLElement;
+        tile.element!.onclick = () => {
+            tile.moveTile(tábla);
+            refreshPage(tábla);
+        };
+        tile.element.innerHTML = `${tile.number}`;
+        if (tile.number == 0) {
+            tile.element.innerHTML = ``;
+            tile.element.classList.add("empty")
+        }
     }
     
 }

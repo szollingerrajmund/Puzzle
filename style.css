@@ -16,6 +16,10 @@
 
 }
 
+.empty {
+    background-color: white;
+}
+
 .tile:hover{
     background-color: whitesmoke;
 }
