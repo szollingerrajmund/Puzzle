@@ -1,3 +1,5 @@
+// Szollinger Rajmund és Kapusi Gergő Levente 
+
 export class Tile {
     position: {tile: number, row: number} = {tile: 0, row: 0};
     number: number;
